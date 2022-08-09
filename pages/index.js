@@ -25,15 +25,16 @@ const successClasses = "outline outline-offset-0 outline-green-500";
 
 export default function Home() {
   const wordToSpell = "ხაშური";
+
   const [wipAttempt, setWipAttempt] = useState([]);
   const [attempt, setAttempt] = useState([]);
+  const [isDirty, setIsDirty] = useState(false);
 
   function handleKeyUp(event, index) {
     const updatedAttempt = [...wipAttempt];
     updatedAttempt[event.target.name] = event.target.value;
     setWipAttempt(updatedAttempt);
-
-    console.log(event.target.value, index + 1);
+    setIsDirty(false);
 
     if (doNothing.includes(event.code)) return;
 
@@ -57,6 +58,14 @@ export default function Home() {
 
   function checkWord() {
     setAttempt(wipAttempt);
+    setIsDirty(true);
+
+    const lettersMatch = wordToSpell
+      .split("")
+      .map((letter, index) => letter === attempt[index]);
+    if (lettersMatch.every((match) => match === true)) {
+      alert("SG");
+    }
   }
 
   return (
@@ -72,8 +81,16 @@ export default function Home() {
                 id={index}
                 maxLength={1}
                 className={`border bg-slate-50 w-[50px] aspect-square rounded-md text-center text-2xl
-                  ${attempt[index] !== wordToSpell[index] && errorClasses}
-                  ${attempt[index] === wordToSpell[index] && successClasses}
+                  ${
+                    isDirty &&
+                    attempt[index] !== wordToSpell[index] &&
+                    errorClasses
+                  }
+                  ${
+                    isDirty &&
+                    attempt[index] === wordToSpell[index] &&
+                    successClasses
+                  }
                 `}
                 onKeyUp={(event) => handleKeyUp(event, index)}
               />
