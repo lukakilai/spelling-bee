@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
+import { isMobile } from "react-device-detect";
 
 import { Header, WordInputContainer } from "../components";
 
-import getRandomWord from "../data/words";
+import { getRandomWord, getRandomShortWord } from "../data/words";
 
 export default function Home() {
   const [wordToSpell, setWordToSpell] = useState(null);
   const [allMatch, setAllMatch] = useState(false);
 
   useEffect(() => {
-    const randomWord = getRandomWord();
+    const randomWord = isMobile ? getRandomShortWord() : getRandomWord();
     setWordToSpell(randomWord);
   }, []);
 
