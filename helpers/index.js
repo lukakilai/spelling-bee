@@ -29,6 +29,8 @@ export default function focusAndSelectHandler({ event, index, wordToSpell }) {
       } else {
         return;
       }
+    } else {
+      return;
     }
   }
 

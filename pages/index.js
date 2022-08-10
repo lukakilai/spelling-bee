@@ -2,9 +2,9 @@ import Head from "next/head";
 import { Fragment, useEffect, useState } from "react";
 import { isMobile } from "react-device-detect";
 
-import { Header, WordInputContainer } from "../components";
+import { Header, WordInputContainer, MainContainer } from "components";
 
-import { getRandomWord, getRandomShortWord } from "../data/words";
+import { getRandomWord, getRandomShortWord } from "data";
 
 export default function Home() {
   const [wordToSpell, setWordToSpell] = useState(null);
@@ -22,10 +22,10 @@ export default function Home() {
       </Head>
       <div className="w-full h-screen bg-slate-200 grid place-items-center px-10">
         {wordToSpell && (
-          <div className="w-full sm:w-[510px] px-5 py-10 sm:p-15 bg-white rounded-md shadow-md">
+          <MainContainer>
             <Header {...{ wordToSpell, allMatch }} />
             <WordInputContainer {...{ wordToSpell, allMatch, setAllMatch }} />
-          </div>
+          </MainContainer>
         )}
       </div>
     </Fragment>

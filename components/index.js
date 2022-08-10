@@ -1,8 +1,17 @@
-import CheckButton from "./Buttons/CheckButton";
-import RefreshButton from "./Buttons/RefreshButton";
+import CheckButton from "./buttons/CheckButton";
+import RefreshButton from "./buttons/RefreshButton";
+
+import LetterInput from "./word-entry/LetterInput";
+import WordInputContainer from "./word-entry/WordInputContainer";
 
 import Header from "./Header";
-import LetterInput from "./LetterInput";
-import WordInputContainer from "./WordInputContainer";
+import MainContainer from "./MainContainer";
 
-export { CheckButton, RefreshButton, Header, LetterInput, WordInputContainer };
+export {
+  CheckButton,
+  RefreshButton,
+  LetterInput,
+  WordInputContainer,
+  Header,
+  MainContainer,
+};

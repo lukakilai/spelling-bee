@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-import focusAndSelectHandler from "../helpers";
+import focusAndSelectHandler from "helpers";
 
-import CheckButton from "./Buttons/CheckButton";
-import RefreshButton from "./Buttons/RefreshButton";
+import CheckButton from "components/buttons/CheckButton";
+import RefreshButton from "components/buttons/RefreshButton";
 
 import LetterInput from "./LetterInput";
 
@@ -34,7 +34,9 @@ export default function WordInputContainer({
       .map((letter, index) => letter === wipAttempt[index]);
 
     if (lettersMatch.every((match) => match === true)) {
-      setAllMatch(true);
+      setTimeout(() => {
+        setAllMatch(true);
+      }, 1000);
     }
   }
 

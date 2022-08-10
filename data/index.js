@@ -11,7 +11,7 @@ const words = [
 ];
 
 export function getRandomShortWord() {
-  const shortWords = words.filter((word) => word.length <= 5);
+  const shortWords = words.filter((word) => word.length <= 4);
   const index = Math.floor(Math.random() * shortWords.length);
   return shortWords[index];
 }
