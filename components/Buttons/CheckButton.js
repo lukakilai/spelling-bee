@@ -4,7 +4,7 @@ export default function CheckButton({ onClick }) {
   return (
     <button
       type="button"
-      className="bg-blue-700 hover:bg-blue-600"
+      className="bg-indigo-100 hover:bg-indigo-200 text-indigo-700"
       onClick={onClick}
     >
       შეამოწმე

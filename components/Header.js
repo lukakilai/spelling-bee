@@ -11,7 +11,9 @@ export default function Header({ wordToSpell, allMatch }) {
       )}
       {allMatch && (
         <Fragment>
-          <p className="text-center text-xl">ყოჩაღ! შენ წარმატებით დასპელე</p>
+          <p className="text-center text-xl">
+            🏆 ყოჩაღ! შენ წარმატებით დასპელე
+          </p>
           <p className="text-center font-bold text-2xl">{wordToSpell}</p>
         </Fragment>
       )}

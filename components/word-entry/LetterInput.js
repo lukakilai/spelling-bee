@@ -18,7 +18,7 @@ export default function LetterInput({
       name={index}
       id={index}
       maxLength={1}
-      className={`border bg-slate-50 w-[45px] aspect-square rounded-md text-center text-lg focus:outline focus:outline-offset-0 focus:outline-sky-400 disabled:opacity-40
+      className={`border bg-slate-50 w-[45px] aspect-square rounded-md text-center text-xl focus:outline focus:outline-offset-0 focus:outline-sky-400 disabled:opacity-40
                   ${
                     isDirty &&
                     attempt[index] !== wordToSpell[index] &&

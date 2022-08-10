@@ -34,9 +34,7 @@ export default function WordInputContainer({
       .map((letter, index) => letter === wipAttempt[index]);
 
     if (lettersMatch.every((match) => match === true)) {
-      setTimeout(() => {
-        setAllMatch(true);
-      }, 1000);
+      setAllMatch(true);
     }
   }
 

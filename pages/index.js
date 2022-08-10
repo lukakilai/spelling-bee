@@ -2,7 +2,12 @@ import Head from "next/head";
 import { Fragment, useEffect, useState } from "react";
 import { isMobile } from "react-device-detect";
 
-import { Header, WordInputContainer, MainContainer } from "components";
+import {
+  Header,
+  WordInputContainer,
+  MainContainer,
+  ConfettiRain,
+} from "components";
 
 import { getRandomWord, getRandomShortWord } from "data";
 
@@ -18,9 +23,10 @@ export default function Home() {
   return (
     <Fragment>
       <Head>
-        <title>🐝 სპელინგბი</title>
+        <title>🐝 ხ-ვ-ი-ჩ-ა, ხვიჩა!</title>
       </Head>
-      <div className="w-full h-screen bg-slate-200 grid place-items-center px-10">
+      {allMatch && <ConfettiRain />}
+      <div className="w-full h-screen grid place-items-center px-10 bg-slate-200">
         {wordToSpell && (
           <MainContainer>
             <Header {...{ wordToSpell, allMatch }} />
