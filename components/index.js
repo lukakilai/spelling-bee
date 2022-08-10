@@ -7,6 +7,7 @@ import WordInputContainer from "./word-entry/WordInputContainer";
 import Header from "./Header";
 import MainContainer from "./MainContainer";
 import ConfettiRain from "./ConfettiRain";
+import Warning from "./Warning";
 
 export {
   CheckButton,
@@ -16,4 +17,5 @@ export {
   Header,
   MainContainer,
   ConfettiRain,
+  Warning,
 };

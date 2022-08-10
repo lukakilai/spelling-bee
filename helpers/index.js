@@ -18,7 +18,7 @@ const doNothing = [
   "AltRight",
 ];
 
-export default function focusAndSelectHandler({ event, index, wordToSpell }) {
+export function focusAndSelectHandler({ event, index, wordToSpell }) {
   if (doNothing.includes(event.code)) return;
 
   if (event.code === "Backspace") {
@@ -39,4 +39,8 @@ export default function focusAndSelectHandler({ event, index, wordToSpell }) {
   } else {
     focusAndSelect(index + 1);
   }
+}
+
+export function handleRefresh() {
+  window.location.reload();
 }

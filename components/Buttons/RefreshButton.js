@@ -1,11 +1,13 @@
 import React from "react";
 
-export default function RefreshButton({ onClick }) {
+import { handleRefresh } from "helpers";
+
+export default function RefreshButton() {
   return (
     <button
       type="button"
       className="bg-orange-100 hover:bg-orange-200 text-orange-700"
-      onClick={onClick}
+      onClick={handleRefresh}
     >
       სხვა სიტყვა
     </button>

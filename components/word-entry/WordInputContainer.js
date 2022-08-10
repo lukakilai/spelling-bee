@@ -1,11 +1,13 @@
 import { useState } from "react";
 
-import focusAndSelectHandler from "helpers";
+import { focusAndSelectHandler } from "helpers";
 
 import CheckButton from "components/buttons/CheckButton";
 import RefreshButton from "components/buttons/RefreshButton";
 
 import LetterInput from "./LetterInput";
+
+import Warning from "components/Warning";
 
 export default function WordInputContainer({
   wordToSpell,
@@ -16,12 +18,15 @@ export default function WordInputContainer({
   const [attempt, setAttempt] = useState([]);
   const [isDirty, setIsDirty] = useState(false);
 
-  function handleKeyUp(event, index) {
+  function updateAttempt(event) {
     const updatedAttempt = [...wipAttempt];
     updatedAttempt[event.target.name] = event.target.value;
     setWipAttempt(updatedAttempt);
     setIsDirty(false);
+  }
 
+  function handleKeyUp(event, index) {
+    updateAttempt(event);
     focusAndSelectHandler({ event, index, wordToSpell });
   }
 
@@ -38,10 +43,6 @@ export default function WordInputContainer({
     }
   }
 
-  function handleRefresh() {
-    window.location.reload();
-  }
-
   return (
     <div className="flex flex-col justify-start items-center space-y-8">
       <div className="flex flex-row justify-start items-center space-x-4">
@@ -52,8 +53,8 @@ export default function WordInputContainer({
           />
         ))}
       </div>
-      {!allMatch && <CheckButton onClick={checkWord} />}
-      {allMatch && <RefreshButton onClick={handleRefresh} />}
+      {isDirty && !allMatch && <Warning />}
+      {allMatch ? <RefreshButton /> : <CheckButton onClick={checkWord} />}
     </div>
   );
 }
