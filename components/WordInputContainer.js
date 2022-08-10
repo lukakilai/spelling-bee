@@ -34,7 +34,6 @@ export default function WordInputContainer({
       .map((letter, index) => letter === wipAttempt[index]);
 
     if (lettersMatch.every((match) => match === true)) {
-      alert("სგ");
       setAllMatch(true);
     }
   }
@@ -49,7 +48,7 @@ export default function WordInputContainer({
         {wordToSpell.split("").map((letter, index) => (
           <LetterInput
             key={`${letter}-${index}`}
-            {...{ index, isDirty, wordToSpell, attempt, handleKeyUp }}
+            {...{ index, isDirty, wordToSpell, attempt, handleKeyUp, allMatch }}
           />
         ))}
       </div>

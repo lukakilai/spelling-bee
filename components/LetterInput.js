@@ -9,14 +9,16 @@ export default function LetterInput({
   wordToSpell,
   attempt,
   handleKeyUp,
+  allMatch,
 }) {
   return (
     <input
+      disabled={allMatch}
       type="text"
       name={index}
       id={index}
       maxLength={1}
-      className={`border bg-slate-50 w-[45px] aspect-square rounded-md text-center text-lg focus:outline focus:outline-offset-0 focus:outline-sky-400
+      className={`border bg-slate-50 w-[45px] aspect-square rounded-md text-center text-lg focus:outline focus:outline-offset-0 focus:outline-sky-400 disabled:opacity-40
                   ${
                     isDirty &&
                     attempt[index] !== wordToSpell[index] &&
