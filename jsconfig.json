@@ -1,5 +1,12 @@
 {
   "compilerOptions": {
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "@/buttons": ["components/buttons"],
+      "@/word-entry": ["components/word-entry"],
+      "@/main-components": ["components/main-components"],
+      "@/data": ["data"],
+      "@/helpers": ["helpers"]
+    }
   }
 }

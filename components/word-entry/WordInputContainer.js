@@ -1,13 +1,9 @@
 import { useState } from "react";
 
-import { focusAndSelectHandler } from "helpers";
-
-import CheckButton from "components/buttons/CheckButton";
-import RefreshButton from "components/buttons/RefreshButton";
-
-import LetterInput from "components/word-entry/LetterInput";
-
-import Warning from "components/Warning";
+import { focusAndSelectHandler } from "@/helpers";
+import { CheckButton, RefreshButton } from "@/buttons";
+import { Warning } from "@/main-components";
+import LetterInput from "./LetterInput";
 
 export default function WordInputContainer({
   wordToSpell,

@@ -2,14 +2,10 @@ import Head from "next/head";
 import { Fragment, useEffect, useState } from "react";
 import { isMobile } from "react-device-detect";
 
-import {
-  Header,
-  WordInputContainer,
-  MainContainer,
-  ConfettiRain,
-} from "components";
+import { Header, MainContainer, ConfettiRain } from "@/main-components";
+import { WordInputContainer } from "@/word-entry";
 
-import { getRandomWord, getRandomShortWord } from "data";
+import { getRandomWord, getRandomShortWord } from "@/data";
 
 export default function Home() {
   const [wordToSpell, setWordToSpell] = useState(null);

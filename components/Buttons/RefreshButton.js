@@ -1,6 +1,6 @@
 import React from "react";
 
-import { handleRefresh } from "helpers";
+import { handleRefresh } from "@/helpers";
 
 export default function RefreshButton() {
   return (
