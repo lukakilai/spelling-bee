@@ -22,7 +22,15 @@ export default function Home() {
         <title>🐝 ხ-ვ-ი-ჩ-ა, ხვიჩა!</title>
       </Head>
       {allMatch && <ConfettiRain />}
-      <div className="w-full h-screen grid place-items-center px-10 bg-slate-200">
+      <div
+        className={`w-full h-screen grid place-items-center px-10
+        ${
+          !allMatch
+            ? "bg-gradient-to-tr from-sky-500 to-red-500"
+            : "bg-gradient-to-r from-teal-500 to-violet-500"
+        }
+      `}
+      >
         {wordToSpell && (
           <MainContainer>
             <Header {...{ wordToSpell, allMatch }} />
