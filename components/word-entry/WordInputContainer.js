@@ -5,7 +5,7 @@ import { focusAndSelectHandler } from "helpers";
 import CheckButton from "components/buttons/CheckButton";
 import RefreshButton from "components/buttons/RefreshButton";
 
-import LetterInput from "./LetterInput";
+import LetterInput from "components/word-entry/LetterInput";
 
 import Warning from "components/Warning";
 

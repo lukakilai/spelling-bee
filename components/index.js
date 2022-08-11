@@ -1,13 +1,13 @@
-import CheckButton from "./buttons/CheckButton";
-import RefreshButton from "./buttons/RefreshButton";
+import CheckButton from "components/buttons/CheckButton";
+import RefreshButton from "components/buttons/RefreshButton";
 
-import LetterInput from "./word-entry/LetterInput";
-import WordInputContainer from "./word-entry/WordInputContainer";
+import LetterInput from "components/word-entry/LetterInput";
+import WordInputContainer from "components/word-entry/WordInputContainer";
 
-import Header from "./Header";
-import MainContainer from "./MainContainer";
-import ConfettiRain from "./ConfettiRain";
-import Warning from "./Warning";
+import Header from "components/Header";
+import MainContainer from "components/MainContainer";
+import ConfettiRain from "components/ConfettiRain";
+import Warning from "components/Warning";
 
 export {
   CheckButton,
