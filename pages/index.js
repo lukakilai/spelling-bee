@@ -20,6 +20,7 @@ export default function Home() {
     <Fragment>
       <Head>
         <title>🐝 ხ-ვ-ი-ჩ-ა, ხვიჩა!</title>
+        <link rel="icon" href="/eu-icon.png" />
       </Head>
       {allMatch && <ConfettiRain />}
       <div
